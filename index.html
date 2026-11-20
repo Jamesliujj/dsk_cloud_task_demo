@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#05070f">
+  <title>星际打飞机 · Neon Shooter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <div class="hud">
+      <div class="hud-block">
+        <span class="label">SCORE</span>
+        <strong id="score">0</strong>
+      </div>
+      <div class="hud-block center">
+        <span class="label">WAVE</span>
+        <strong id="wave">1</strong>
+      </div>
+      <div class="hud-block right">
+        <span class="label">HIGH</span>
+        <strong id="highScore">0</strong>
+      </div>
+    </div>
+
+    <div class="stage-wrap">
+      <canvas id="game" width="480" height="720" aria-label="星际打飞机"></canvas>
+
+      <div id="menu" class="overlay">
+        <p class="kicker">NEON ARCADE</p>
+        <h1>星际打飞机</h1>
+        <p class="tagline">穿越陨石带，击落蜂群，活到最后。</p>
+        <div class="controls-hint">
+          <span>🖱 拖动 / 触摸移动</span>
+          <span>⌨ WASD / 方向键</span>
+          <span>P 暂停</span>
+          <span>R 重开</span>
+        </div>
+        <button id="startBtn" class="primary">开始游戏</button>
+        <button id="muteBtn" class="ghost" aria-pressed="false">🔊 音效开</button>
+      </div>
+
+      <div id="pause" class="overlay hidden">
+        <p class="kicker">PAUSED</p>
+        <h2>游戏暂停</h2>
+        <p class="tagline">按 P 或点击继续。</p>
+        <button id="resumeBtn" class="primary">继续游戏</button>
+      </div>
+
+      <div id="gameover" class="overlay hidden">
+        <p class="kicker">SIGNAL LOST</p>
+        <h2>战机坠毁</h2>
+        <p class="tagline">本局得分 <strong id="finalScore">0</strong></p>
+        <p id="newRecord" class="record hidden">★ 新纪录 ★</p>
+        <button id="restartBtn" class="primary">再来一局</button>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="lives" id="lives" aria-label="生命值"></div>
+      <div class="status" id="statusText">准备起飞</div>
+      <div class="power" id="powerText"></div>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
